@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.long {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    transform-origin: right;
+    transform: translateX(-100%);
+    transition: 2s linear transform;
+    transform-style: preserve-3d;
+}
+
+.cube {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    transform-style: preserve-3d;
+    transform: rotateY(0) rotateX(0);
+    transition: 2s transform linear;
+}
+
+.cube.animation {
+    transform: rotateY(80deg) rotateX(-50deg);
+}
+
+.cube.animation .face-1 {
+    transform: translateY(-100%) rotateX(90deg);
+}
+
+.cube.animation .face-2 {
+    transform: translateX(100%) rotateY(90deg);
+}
+
+.cube.animation .face-3 {
+    transform: translateY(100%) rotateX(-90deg);
+}
+
+.cube.animation .face-4 {
+    transform: rotateY(-90deg);
+}
+
+.cube.animation .long {
+    transform: translateX(-100%) rotateY(-90deg);
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75);
+    transition: 2s linear transform;
+}
+
+.face-1 {
+    transform: translateY(-100%);
+    transform-origin: left bottom;
+}
+
+.face-2 {
+    transform-origin: left top;
+    transform: translateX(100%);
+}
+
+.face-3 {
+    transform-origin: top;
+    transform: translateY(100%);
+}
+
+.face-4 {
+    left: 0;
+    top: 0;
+    transform-origin: right;
+    transform: rotateY(0);
+}
+
+.face-5 {
+    right: 0;
+    top: 0;
+}
